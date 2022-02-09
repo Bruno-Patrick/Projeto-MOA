@@ -5,5 +5,8 @@ class Clientes(models.Model):
     email = models.CharField('Digite seu email', max_length=200)
     telefone = models.CharField('Digite seu telefone', max_length=200)
     
+class NewProject(models.Model):
+    nome = models.CharField('Nome do projeto:', max_length=200)
+    
     def __str__(self):
         return self.nome

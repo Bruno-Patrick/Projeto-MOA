@@ -6,12 +6,14 @@ from .models import Clientes
 #Redirecionamento da página
 from django.urls import reverse_lazy
 
+#Pag Cadastro
 class ClientesCad(CreateView):
     model = Clientes
     fields = ['nome','email','telefone']
     template_name = 'cadastros/index_cadastros.html'
     success_url = reverse_lazy('listagem')
-    
+
+#Pag Listagem
 class ClientesListagem(ListView):
     model = Clientes
     template_name = 'cadastros/listar_cadastro.html'
@@ -28,6 +30,6 @@ class ClientesDelete(DeleteView):
     model = Clientes
     template_name = 'cadastros/excluir_cadastros.html'
     success_url = reverse_lazy('listagem')
-    
+      
 def abertura_modelForm(request):
-    return render(render, "index.html")
+    return render(request, "index.html")

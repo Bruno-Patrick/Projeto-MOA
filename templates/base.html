@@ -1,4 +1,5 @@
 {% load static %}
+{% load account %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,6 +23,8 @@
 
     <!-- Custom styles for this template-->
     <link href={% static "css/sb-admin-2.min.css" %} rel="stylesheet">
+    <link href={% static "css/personal-confs.css" %} rel="stylesheet">
+
 
     <!-- Custom styles for this page -->
     <link href={% static "datatables/dataTables.bootstrap4.min.css" %} rel="stylesheet">
@@ -43,7 +46,7 @@
 
             {% block sidebar %}
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                     <div class="sidebar-brand-icon">
                         <img src={% static "vendor/img/logo.png" %} alt="" width="50" height="50">
                     </div>
@@ -224,6 +227,7 @@
                             </div>
                         </li>
 
+                        
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
@@ -296,9 +300,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 text-uppercase small">{% user_display user %}</span>
+                                <img class="img-profile rounded-circle" src={% static "vendor/img/undraw_profile.svg" %}>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -333,13 +336,63 @@
                     <h1 class="h5 mb-4 text-gray-800">Meus Projetos:</h1>
                     <div class='row'>
                         <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                
+                            <!-- Draggable DIV -->
+                            <div>
+                                <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+                                    <div class="page-content page-container" id="page-content">
+                                        <div class="padding">
+                                            <div class="row container d-flex justify-content-center">
+                                                <div class="col-sm-12">
+                                                    <!-- Draggable default card start -->
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h5>Drag and drop cards</h5>
+                                                        </div>
+                                                        <div class="card-block">
+                                                            <div class="row" id="sortable">
+                                                                <div class="col-md-3" style="">
+                                                                    <div class="card-sub"> <img class="card-img-top img-fluid" src="https://i.imgur.com/QwIYa8y.jpg" alt="Card image cap">
+                                                                        <div class="card-block">
+                                                                            <h4 class="card-title">Product 1</h4>
+                                                                            <p class="card-text">For what reason would it be advisable for me to think about business content?</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3" style="">
+                                                                    <div class="card-sub"> <img class="card-img-top img-fluid" src="https://i.imgur.com/QwIYa8y.jpg" alt="Card image cap">
+                                                                        <div class="card-block">
+                                                                            <h4 class="card-title">Product 2</h4>
+                                                                            <p class="card-text">For what reason would it be advisable for me to think about business content.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3" draggable="false" style="">
+                                                                    <div class="card-sub"> <img class="card-img-top img-fluid" src="https://i.imgur.com/QwIYa8y.jpg" alt="Card image cap" draggable="false">
+                                                                        <div class="card-block">
+                                                                            <h4 class="card-title">Product 3</h4>
+                                                                            <p class="card-text">For what reason would it be advisable for me to think about business content</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3" style="">
+                                                                    <div class="card-sub"> <img class="card-img-top img-fluid" src="https://i.imgur.com/IglVN9o.jpg" alt="Card image cap">
+                                                                        <div class="card-block">
+                                                                            <h4 class="card-title">Product 4</h4>
+                                                                            <p class="card-text">For what reason would it be advisable for me to think about business content</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> <!-- Draggable default card start -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
                 <!-- /.container-fluid -->
 
             </div>
@@ -387,6 +440,8 @@
     </div>
     {% comment %} datatables {% endcomment %}
 
+    
+
         <!-- Bootstrap core JavaScript-->
         <script src={% static "jquery/jquery.min.js" %}></script>
         <script src={% static "bootstrap/js/bootstrap.bundle.min.js" %}></script>
@@ -396,6 +451,7 @@
 
         <!-- Custom scripts for all pages-->
         <script src={% static "js/sb-admin-2.min.js" %}></script>
+        <script src={% static "js\personaljs.js" %}></script>
 
         <!-- Page level custom scripts -->
         <script src={% static "js/demo/datatables-demo.js" %}></script>
@@ -410,6 +466,9 @@
         <!-- Bootstrap core JavaScript-->
         <script src={% static "jquery/jquery.min.js" %}></script>
         <script src={% static "bootstrap/js/bootstrap.bundle.min.js" %}></script>
+        
+        <!-- SCRIPTS PESSOAIS -->
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
         {% comment %} datatables {% endcomment %}
         <!-- Page level plugins -->

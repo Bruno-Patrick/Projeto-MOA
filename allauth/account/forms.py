@@ -88,10 +88,12 @@ class SetPasswordField(PasswordField):
 
 
 class LoginForm(forms.Form):
-
-    password = PasswordField(label=_("Password"), autocomplete="current-password")
-    remember = forms.BooleanField(label=_("Remember Me"), required=False)
-
+    password = PasswordField(
+        label=_(""),
+        autocomplete="current-password"
+        )
+    password.widget.attrs.update({'class': 'form-control form-control-user', "placeholder": _("password"),})
+    remember = forms.BooleanField(required=False)
     user = None
     error_messages = {
         "account_inactive": _("This account is currently inactive."),
@@ -112,15 +114,19 @@ class LoginForm(forms.Form):
                     "type": "email",
                     "placeholder": _("E-mail address"),
                     "autocomplete": "email",
+                    "class": "form-control form-control-user"
                 }
             )
-            login_field = forms.EmailField(label=_("E-mail"), widget=login_widget)
+            login_field = forms.EmailField(label=_(""), widget=login_widget)
         elif app_settings.AUTHENTICATION_METHOD == AuthenticationMethod.USERNAME:
             login_widget = forms.TextInput(
-                attrs={"placeholder": _("Username"), "autocomplete": "username"}
+                attrs={"placeholder": _("username"),
+                       "autocomplete": "username",
+                        "class": "form-control form-control-user"
+                       }
             )
             login_field = forms.CharField(
-                label=_("Username"),
+                label=_(""),
                 widget=login_widget,
                 max_length=get_username_max_length(),
             )

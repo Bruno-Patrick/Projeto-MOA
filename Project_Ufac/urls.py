@@ -15,13 +15,17 @@ Including another URLconf
 """
 from pipes import Template
 from django.contrib import admin
+from django.shortcuts import redirect
 from django.urls import include, path
 from django.views.generic import TemplateView
 
+
 urlpatterns = [
+    #Página do Administrador
     path('admin/', admin.site.urls),
+    #Demais paths
     path('', TemplateView.as_view(template_name="index.html")),
     path('', include('cadastros.urls')),
     path('', include('allauth.urls')),
     path('', include("allauth.account.urls"))
-]
+    ]

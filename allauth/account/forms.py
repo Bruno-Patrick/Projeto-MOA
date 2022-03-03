@@ -275,7 +275,9 @@ class BaseSignupForm(_base_signup_form_class()):
         label=_("Username"),
         min_length=app_settings.USERNAME_MIN_LENGTH,
         widget=forms.TextInput(
-            attrs={"placeholder": _("Username"), "autocomplete": "username"}
+            attrs={"placeholder": _("Username"), "autocomplete": "username",
+                   "class": "form-control form-control-user",
+            }
         ),
     )
     email = forms.EmailField(
@@ -284,6 +286,7 @@ class BaseSignupForm(_base_signup_form_class()):
                 "type": "email",
                 "placeholder": _("E-mail address"),
                 "autocomplete": "email",
+                "class": "form-control form-control-user",
             }
         )
     )
@@ -321,6 +324,7 @@ class BaseSignupForm(_base_signup_form_class()):
         if email_required:
             self.fields["email"].label = gettext("E-mail")
             self.fields["email"].required = True
+            
         else:
             self.fields["email"].label = gettext("E-mail (optional)")
             self.fields["email"].required = False
@@ -384,11 +388,13 @@ class SignupForm(BaseSignupForm):
     def __init__(self, *args, **kwargs):
         super(SignupForm, self).__init__(*args, **kwargs)
         self.fields["password1"] = PasswordField(
-            label=_("Password"), autocomplete="new-password"
+            label=_("Password"), autocomplete="new-password",
+            
+            
         )
         if app_settings.SIGNUP_PASSWORD_ENTER_TWICE:
             self.fields["password2"] = PasswordField(
-                label=_("Password (again)"), autocomplete="new-password"
+                label=_("Password (again)"), autocomplete="new-password" 
             )
 
         if hasattr(self, "field_order"):

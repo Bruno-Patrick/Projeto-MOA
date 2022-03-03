@@ -29,8 +29,8 @@
                     <div class="card o-hidden border-0 shadow-lg my-5">
                         <div class="card-body p-0">
                             <!-- Nested Row within Card Body -->
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6">
+                            <div class="row justify-content-center m-md-auto ">
+                                <div class="col-lg-6">                                  
                                     <!-- Tamanho do input de login-->
                                     <div class="p-5">
                                         <div class="text-center">
@@ -41,8 +41,8 @@
                                             <div class="form-group">{{ form.login }}</div>
                                             <div class="form-group">{{ form.password }}</div>
                                             <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                            {{ form.remember }} lembre de mim
+                                                <div class="custom-control custom-checkbox small">
+                                                {{ form.remember }} lembre de mim
                                             </div>
                                             </div>
                                             {% if redirect_field_value %}
@@ -55,7 +55,7 @@
                                                         type="submit">{% trans "Entrar" %}</button>
                                                 <br>
                                                 <a class="button secondaryAction small"
-                                                   href="{% url 'account_reset_password' %}">{% trans "Esqueceu a Senha?" %}</a>
+                                                   href="{% url 'account_signup' %}">{% trans "Não possui cadastro?" %}</a>
                                             </div>
                                         </form>
                                     </div>

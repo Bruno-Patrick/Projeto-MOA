@@ -135,7 +135,7 @@
                     <!-- Topbar Search -->
                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            bruno.patrick@sou.ufac.br
+                            <span class='text-dark font-italic'>bruno.patrick@sou.ufac.br</span>
                         </div>
                     </form>
 
@@ -195,27 +195,35 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
     {% else %} 
-      
+        <body class='bg-gradient-primary'>
+            <div class="container">
+                <!-- Outer Row -->
+                <div class="row justify-content-center">
+                    <div class="col-xl-10 col-lg-12 col-md-9">
+                        <div class="card o-hidden border-0 shadow-lg my-5">
+                            <div class="card-body p-0">
+                                <!-- Nested Row within Card Body -->
+                                <div class="row justify-content-center m-md-auto ">
+                                    <img src={% static 'vendor\img\logo.png' %}></img>
+                                    <div class="col-lg-6">                                  
+                                        <!-- Tamanho do input de login-->
+                                        <div class="p-5">
+                                            <div class="text-center">
+                                                <h1 class="h4 text-gray-900 mb-4">{% trans "Você não está logado!" %}</h1>
+                                            </div>
+                                            <div class='text-center'>
+                                            <a class='btn btn-block btn-primary' href={% url 'account_login' %}>Faça Login</a>
+                                            <a class="button secondaryAction small" href={% url 'account_signup' %}>Não possui cadastro?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </body>
     {% endif %} 
 
         <!-- Bootstrap core JavaScript-->

@@ -27,5 +27,6 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html")),
     path('', include('cadastros.urls')),
     path('', include('allauth.urls')),
-    path('', include("allauth.account.urls"))
+    path('', include("allauth.account.urls")),
+    #path('', include("redirect.urls"))
     ]

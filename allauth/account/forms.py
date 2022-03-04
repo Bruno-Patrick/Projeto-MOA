@@ -272,10 +272,10 @@ def _base_signup_form_class():
 
 class BaseSignupForm(_base_signup_form_class()):
     username = forms.CharField(
-        label=_("Username"),
+        label=_(""),
         min_length=app_settings.USERNAME_MIN_LENGTH,
         widget=forms.TextInput(
-            attrs={"placeholder": _("Username"), "autocomplete": "username",
+            attrs={"placeholder": _("Nome de Usuário"), "autocomplete": "username",
                    "class": "form-control form-control-user",
             }
         ),
@@ -284,7 +284,7 @@ class BaseSignupForm(_base_signup_form_class()):
         widget=forms.TextInput(
             attrs={
                 "type": "email",
-                "placeholder": _("E-mail address"),
+                "placeholder": _("Endereço de Email"),
                 "autocomplete": "email",
                 "class": "form-control form-control-user",
             }

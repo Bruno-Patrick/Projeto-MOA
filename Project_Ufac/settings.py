@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib.redirects',
     'cadastros',
     'redirect',
     #Melhorar o layout dos forms
@@ -57,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 ]
 
 ROOT_URLCONF = 'Project_Ufac.urls'

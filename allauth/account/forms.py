@@ -389,13 +389,18 @@ class SignupForm(BaseSignupForm):
         super(SignupForm, self).__init__(*args, **kwargs)
         self.fields["password1"] = PasswordField(
             label=_("Password"), autocomplete="new-password",
-            
-            
+                                 
         )
+        self.fields["password1"].widget.attrs.update({'class': 'form-control form-control-user', "placeholder": _("password"),})
+     
         if app_settings.SIGNUP_PASSWORD_ENTER_TWICE:
             self.fields["password2"] = PasswordField(
-                label=_("Password (again)"), autocomplete="new-password" 
+                label=_("Password (again)"), autocomplete="new-password",
+                
+                
             )
+        self.fields["password2"].widget.attrs.update({'class': 'form-control form-control-user', "placeholder": _("Password (again)"),})
+    
 
         if hasattr(self, "field_order"):
             set_form_field_order(self, self.field_order)

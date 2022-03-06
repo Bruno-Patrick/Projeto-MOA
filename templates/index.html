@@ -30,7 +30,7 @@
     <link href={% static 'css/sb-admin-2.min.css' %} rel="stylesheet">
 
 </head>
-<body id="page-top">
+<body class='bg-gradient-primary'>
     {% if user.is_authenticated %}
 
     <!-- Page Wrapper -->
@@ -147,7 +147,7 @@
                             <a class="nav-link dropdown-toggle" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 text-uppercase small">{% user_display user %}</span>
-                                <img class="img-profile rounded-circle" src={% static "vendor/img/undraw_profile.svg" %}>
+                                <img class="img-profile rounded-circle" src={% static "vendor/img/undraw_profile.svg" %}></img>
 
                                 <form method="post" action="{% url 'account_logout' %}">
                                     {% csrf_token %}
@@ -157,7 +157,8 @@
                                                 value="{{ redirect_field_value }}"/>
                                     {% endif %}
                                     <div class='container-sm'>
-                                    <button type="submit"><i class="fas fa-door-open"></i></button>
+                                    <button type="submit">
+                                        <img src={% static 'static\vendor\img\logout logo.png' %}></button>
                                     </div>
                                 </form>
                             </a>
@@ -196,11 +197,11 @@
     </a>
 
     {% else %} 
-        <body class='bg-gradient-primary'>
-            <div class="container">
+        <body class='bg-gradient-primary' style="height: 100vh !important">
+            <div class="container" style="height: 100vh !important">
                 <!-- Outer Row -->
-                <div class="row justify-content-center">
-                    <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="row align-items-center justify-content-center" style="height: 100vh !important">
+                    <div class="col-xl-7 col-lg-7 col-md-7 align-self-center">
                         <div class="card o-hidden border-0 shadow-lg my-5">
                             <div class="card-body p-0">
                                 <!-- Nested Row within Card Body -->
@@ -223,6 +224,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
         </body>
     {% endif %} 
 

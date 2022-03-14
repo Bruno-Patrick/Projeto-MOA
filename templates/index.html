@@ -1,4 +1,5 @@
 {% load static %}{% load account %}{% load i18n %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,6 +20,7 @@
     <!-- Custom styles for this template-->
     <link href={% static "css/sb-admin-2.min.css" %} rel="stylesheet">
     <link href={% static "css/personal-confs.css" %} rel="stylesheet">
+    
 
 
     <!-- Custom styles for this page -->
@@ -69,7 +71,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href={% url 'cadastro' %} data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Cadastro</span>                    
@@ -77,14 +79,14 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Faça seu cadastro:</h6>
-                        <a class="collapse-item" href={% url 'cadastro' %}>Alunos</a>           
+                        <a class="collapse-item" href="#">Alunos</a>           
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href={% url 'listagem' %} data-toggle="collapse" data-target="#collapseUtilities"
+                <a class="nav-link collapsed" href='#' data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Listagem</span>
@@ -92,7 +94,7 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Confira a lista:</h6>
-                        <a class="collapse-item" href={% url 'listagem' %}>Alunos</a>
+                        <a class="collapse-item" href='#'>Alunos</a>
                     </div>
                 </div>
             </li>
@@ -147,6 +149,7 @@
                             <a class="nav-link dropdown-toggle" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 text-uppercase small">{% user_display user %}</span>
+                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
                                 <img class="img-profile rounded-circle" src={% static "vendor/img/undraw_profile.svg" %}></img>
 
                                 <form method="post" action="{% url 'account_logout' %}">
@@ -158,7 +161,8 @@
                                     {% endif %}
                                     <div class='container-sm'>
                                     <button type="submit">
-                                        <img src={% static 'static\vendor\img\logout logo.png' %}></button>
+                                        <img src={% static 'vendor\img\logout logo.png'%} alt="" width="23" height="23"></img>
+                                    </button>
                                     </div>
                                 </form>
                             </a>
@@ -170,7 +174,22 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                
+                <div class='container-fluid'>
+                    
+
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h1>Projetos
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    Novo
+                              </button></h1>
+                            <!-- Button trigger modal -->
+
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
             <!-- End of Main Content -->
@@ -190,6 +209,38 @@
 
     </div>
     <!-- End of Page Wrapper -->
+
+    <!-- modals -->
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Novo Projeto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form method="POST" enctype="multipart/form-data">
+ 
+                <!-- Security token -->
+                {% csrf_token %}
+             
+                <!-- Using the formset -->
+                {{ form.as_p }}
+                 
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- fim modals-->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">

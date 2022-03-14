@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.redirects',
-    'cadastros',
+    'cadastros.apps.CadastrosConfig',
     'redirect',
     #Melhorar o layout dos forms
     'crispy_forms',

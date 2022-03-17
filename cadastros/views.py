@@ -1,6 +1,6 @@
 from dataclasses import field
 from django.shortcuts import render
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DeleteView, View
 from .forms import *
 #from .models import ProjetosModel
 
@@ -10,7 +10,4 @@ from django.urls import reverse_lazy
 class create_view(CreateView):
   template_name="index.html"
   model = ProjetosModel
-  fields = [
-            'title',
-            'description',
-        ]
+  fields = '__all__'

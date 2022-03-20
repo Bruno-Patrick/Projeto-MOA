@@ -1,7 +1,8 @@
 from pipes import Template
 from django.urls import path
 from django.views.generic import TemplateView
+from .views import *
 
 urlpatterns = [
-    path('teste/', TemplateView.as_view(template_name='create_view.html') ),
+    path('', CriarProjeto.as_view()),
 ]

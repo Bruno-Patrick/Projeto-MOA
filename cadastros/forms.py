@@ -5,7 +5,7 @@ from django.views.generic.detail import DetailView
  
 # creating a form
 
-class  ProjetosForm(forms.ModelForm):
+class ProjetosForm(forms.ModelForm):
  
     # create meta class
     class Meta:

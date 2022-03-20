@@ -222,13 +222,8 @@
           </button>
         </div>
         <div class="modal-body">
-            <form method="POST" enctype="multipart/form-data">
- 
-                <!-- Security token -->
+            <form method="POST" action="" enctype="multipart/form-data">
                 {% csrf_token %}
-             
-                <!-- Using the formset -->
-                <!--{{ form.as_p }}-->
                 <div class='form-group'>
                     <div class='form-text'>
                         <span class='font-italic font-weight-bold'>Título:</span>

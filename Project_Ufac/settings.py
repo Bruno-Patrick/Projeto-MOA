@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.redirects',
     'cadastros.apps.CadastrosConfig',
-    'redirect',
     #Melhorar o layout dos forms
     'crispy_forms',
     #django allauth

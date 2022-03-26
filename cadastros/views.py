@@ -19,9 +19,9 @@ class EditarProjeto(UpdateView):
   model = ProjetosModel
   fields = "__all__" 
   template_name = 'app/index_cadastros.html'
-  success_url = reverse_lazy('listagem-de-projetos')
+  success_url = reverse_lazy('listagem')
 
 class DeletarProjeto(DeleteView):
     model = ProjetosModel
     template_name = 'app/excluir_cadastros.html'
-    success_url = reverse_lazy('listagem-de-projetos')
+    success_url = reverse_lazy('listagem')

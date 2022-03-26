@@ -1,4 +1,4 @@
-{% load static %} {% crispy_form_tags %}
+{% load static %}
 
     {% block titulo %}
     <title>Listagem Dos Seus Projetos</title>
@@ -22,8 +22,8 @@
                 <tr>
                     <td scope="row">{{ item.title }}</td>
                     <td>{{ item.description }}</td>
-                    <td><a href="{% url 'editar-projeto' item.pk %}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
-                    <a href="{% url 'deletar-o-projeto' item.pk %}" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a> </td>
+                    <td><a href="{% url 'update' item.pk %}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
+                    <a href="{% url 'delete' item.pk %}" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a> </td>
                 </tr>
 
             {% empty %}

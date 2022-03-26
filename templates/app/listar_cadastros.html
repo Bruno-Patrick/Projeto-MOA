@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} {% crispy_form_tags %}
 
     {% block titulo %}
     <title>Listagem Dos Seus Projetos</title>
@@ -17,14 +17,13 @@
         </thead>
         <tbody>
 
-            {% crispy_form_tags %}
             {% for item in object_list %}
 
                 <tr>
                     <td scope="row">{{ item.title }}</td>
                     <td>{{ item.description }}</td>
-                    {% comment %} <td><a href="{% url 'update' item.pk %}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
-                    <a href="{% url 'deletar' item.pk %}" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a> </td> {% endcomment %}
+                    <td><a href="{% url 'editar-projeto' item.pk %}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
+                    <a href="{% url 'deletar-o-projeto' item.pk %}" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a> </td>
                 </tr>
 
             {% empty %}

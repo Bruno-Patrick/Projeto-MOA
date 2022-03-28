@@ -15,3 +15,37 @@
   background-repeat: no-repeat;
   height: 100%;
 }
+
+/* Draggable */
+.boards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.board {
+  background: #0022b893;
+  border: 1px solid #ffffff;
+  margin: 0 16px;
+}
+.board h3, h4, h5 {
+  padding: 16px;
+  margin: 0;
+  color: #fffffffb;
+}
+.dropzone {
+  padding: 16px;
+  background: #cfbaf0;
+  min-width: 282px;
+  min-height: 200px;
+}
+.card {
+  padding: 16px;
+  box-shadow: 0 2px 2px -1px #cf1111f6;
+  width: 250px;
+  margin: 25px 0;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: white;
+}
+/* Fim do Draggable */

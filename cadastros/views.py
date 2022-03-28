@@ -13,15 +13,15 @@ class CriarProjeto(CreateView):
 
 class ProjetosListagem(ListView):
   model = ProjetosModel
-  template_name = 'app/listar_cadastros.html'
+  template_name = 'index.html'
 
 class EditarProjeto(UpdateView):
   model = ProjetosModel
   fields = "__all__" 
   template_name = 'app/index_cadastros.html'
-  success_url = reverse_lazy('listagem')
+  success_url = reverse_lazy('home')
 
 class DeletarProjeto(DeleteView):
     model = ProjetosModel
     template_name = 'app/excluir_cadastros.html'
-    success_url = reverse_lazy('listagem')
+    success_url = reverse_lazy('home')

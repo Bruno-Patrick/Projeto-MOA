@@ -19,7 +19,6 @@
 /* Draggable */
 .boards {
   display: flex;
-  justify-content: space-between;
 }
 
 .board {
@@ -38,7 +37,7 @@
   min-width: 282px;
   min-height: 200px;
 }
-.card {
+.draggcard {
   padding: 16px;
   box-shadow: 0 2px 2px -1px #cf1111f6;
   width: 250px;
@@ -47,5 +46,43 @@
   font-weight: 600;
   font-size: 18px;
   background-color: white;
+  cursor: pointer;
+}
+
+.draggcard .dropzone {
+  transition: 400ms;
+}
+
+.status {
+  width: 30px;
+  height: 8px;
+  background: gray;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.status.todo {
+  background: rgba(247, 3, 3, 0.801);
+}
+
+.status.progress {
+  background: rgb(42, 42, 221);
+}
+
+.status.done {
+  background-color: rgb(14, 136, 14);
+}
+
+.highlight {
+  background-color: #FD951F08;
+}
+
+.is-dragging {
+  cursor: move !important; 
+  opacity: 0.3;
+}
+
+.over {
+  background-color: #41eb26d8;
 }
 /* Fim do Draggable */

@@ -44,7 +44,7 @@
   width: 250px;
   margin: 25px 0;
   border-radius: 4px;
-  font-weight: 600;
+  /* font-weight: 600; */
   font-size: 18px;
   background-color: white;
   cursor: pointer;
@@ -89,7 +89,36 @@
 
 .boards-main {
   display: flex;
-  /* justify-content: space-between; */
+  text-align: justify;
+}
+
+div.content textarea{
+  /* border: 0; */
+  border-color: black;
+  border-radius: 4px;
+  white-space: normal;
+}
+
+div.content {
+  word-wrap: break-word;
+}
+
+.to-do {
+  background-color: rgba(232, 42, 42, 0.994);
+  color: white;
+  font-weight: bold;
+}
+
+.in-progress {
+  background-color: rgb(42, 42, 221);
+  color: white;
+  font-weight: bold;
+}
+
+.done {
+  background-color: rgb(14, 136, 14);;
+  color: white;
+  font-weight: bold;
 }
 
 footer {

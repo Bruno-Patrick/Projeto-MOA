@@ -7,7 +7,7 @@ class ProjetosModel(models.Model):
  
     # fields of the model
     title = models.CharField(max_length = 200)
-    description = models.TextField(  verbose_name=("Descrição"))
+    description = models.TextField(verbose_name=("Descrição"))
         
     def __str__(self):
         return self.title

@@ -9,7 +9,7 @@ cards.forEach(draggcard => {
 
 function dragstart() {
     dropzone.forEach( dropzone => dropzone.classList.add('highlight'))
-
+    // this = draggcard
     this.classList.add('is-dragging')
 }
 
@@ -19,6 +19,7 @@ function drag() {
 function dragend() {
     dropzone.forEach( dropzone => dropzone.classList.remove('highlight'))
     this.classList.remove('is-dragging')
+    // this = draggcard
 }
 
 // Dropzone
@@ -31,6 +32,7 @@ dropzone.forEach( dropzone => {
 })
 
 function dragenter() {
+    
 }
 
 function dragover() {

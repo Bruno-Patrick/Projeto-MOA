@@ -1,3 +1,13 @@
+body::-webkit-scrollbar {
+  width: 12px;
+  background: #2e55c7;
+}
+
+ul#accordionSidebar {
+  color: white;
+  font-weight: bold;
+}
+
 .flex-container {
     display: flex;
   }
@@ -23,7 +33,7 @@
 }
 
 .board {
-  background: #0022b893;
+  background: #A6A6DD;
   border: 1px solid #ffffff;
   margin: 0 16px;
 }
@@ -34,7 +44,7 @@
 }
 .dropzone {
   padding: 16px;
-  background: #cfbaf0;
+  background: #A6A6DD;
   min-width: 282px;
   min-height: 200px;
 }
@@ -52,26 +62,6 @@
 
 .draggcard .dropzone {
   transition: 400ms;
-}
-
-.status {
-  width: 30px;
-  height: 8px;
-  background: gray;
-  margin-bottom: 16px;
-  border-radius: 8px;
-}
-
-.status.todo {
-  background: rgba(247, 3, 3, 0.801);
-}
-
-.status.progress {
-  background: rgb(42, 42, 221);
-}
-
-.status.done {
-  background-color: rgb(14, 136, 14);
 }
 
 .highlight {
@@ -93,10 +83,17 @@
 }
 
 div.content textarea{
-  /* border: 0; */
-  border-color: black;
-  border-radius: 4px;
+  border: 0;
+  /* border-color: black;
+  border-radius: 3px; */
   white-space: normal;
+  word-wrap: break-word;
+  text-align: justify;
+  width: 220px;
+  max-height: 150px;
+  min-height: 50px;
+  resize: none;
+  outline: none;
 }
 
 div.content {
@@ -104,21 +101,46 @@ div.content {
 }
 
 .to-do {
-  background-color: rgba(232, 42, 42, 0.994);
+  background-color: #FF5B97;
   color: white;
   font-weight: bold;
+  display: flex;
+}
+
+div.to-do input[type="button"] {
+  margin: auto 0.5em auto auto;
+  background-color: #FF8870;
+  color: white;
+  font-weight: bold;
+}
+
+div.in-progress input[type="button"] {
+  margin: auto 0.5em auto auto;
+  background-color: #FF8870;
+  color: white;
+  font-weight: bold;
+}
+
+div.done input[type="button"] {
+  margin: auto 0.5em auto auto;
+  background-color: #FF8870;
+  color: white;
+  font-weight: bold;
+
 }
 
 .in-progress {
-  background-color: rgb(42, 42, 221);
+  background-color: #FF5B97;
   color: white;
   font-weight: bold;
+  display: flex;
 }
 
 .done {
-  background-color: rgb(14, 136, 14);;
+background-color: #FF5B97;
   color: white;
   font-weight: bold;
+  display: flex;
 }
 
 footer {

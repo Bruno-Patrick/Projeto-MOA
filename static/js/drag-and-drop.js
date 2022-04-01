@@ -50,3 +50,10 @@ function dragleave() {
 function drop() {
     this.classList.remove('over')
 }
+
+// Criar novos Cards
+function NewCard() {
+    let criarCard = document.querySelector('button#done');
+    criarCard.addEventListener("click", function(){ 
+        alert("Hello World!"); });
+}

@@ -175,13 +175,14 @@
                         <div class="board">
                             <div class="to-do">
                                 <h5>To Do</h5>
-                                <input type="button" value="+" class="btn">
+                                <input type="button" value="+" class="btn createCard">
                             </div>
-                            <div class="dropzone">
+                            <div class="dropzone PaideTodos">
                                 <div class="draggcard" draggable="true">
                                     <div class="content">
                                         <textarea name="conteudo" id="conteudo" cols="30" rows="10" placeholder="Enter a note" class="scrollbar-primary"></textarea>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -208,7 +209,8 @@
                         <div class="board">
                             <div class="done">
                                 <h5>Done</h5>
-                                <input type="button" value="+" class="btn">
+                                <input type="button" value="+" class="btn" id="done">
+                                <button type="button" id="done">+</button>
                             </div>
                             <div class="dropzone">
                                 <div class="draggcard" draggable="true">
@@ -342,5 +344,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Scrip Pessoal -->
     <script src={% static 'js\drag-and-drop.js' %}></script>
+    <script src={% static 'js\creationCards.js' %}></script>
 </body>
 </html>

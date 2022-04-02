@@ -52,8 +52,54 @@ function drop() {
 }
 
 // Criar novos Cards
-function NewCard() {
-    let criarCard = document.querySelector('button#done');
-    criarCard.addEventListener("click", function(){ 
-        alert("Hello World!"); });
-}
+let conteinerToDo = document.querySelector('div.To-Do-Father');
+
+let newcardToDo = document.querySelectorAll('input.To-Do-NewCard');
+newcardToDo.forEach(item => {
+    item.addEventListener('click', () => {
+        let novaDraggcard = document.createElement('div');
+        novaDraggcard.classList.add('draggcard');
+        novaDraggcard.setAttribute('draggable', true);
+
+        let novaContent = document.createElement('div');
+        novaContent.classList.add('content');
+
+        let novaTextArea = document.createElement('textarea');
+        novaTextArea.setAttribute('placeholder', 'Enter a Note');
+        novaTextArea.setAttribute('name', 'conteudo');
+        novaTextArea.setAttribute('id', 'conteudo');
+        novaTextArea.setAttribute('cols', '30');
+        novaTextArea.setAttribute('rows', '10');
+
+        // novaContent.appendChild(novaTextArea);
+        novaContent.appendChild(novaTextArea);
+        novaDraggcard.appendChild(novaContent);
+        conteinerToDo.appendChild(novaDraggcard);
+    });   
+});
+
+let conteinerInProgress = document.querySelector('div.In-Progress-Father');
+
+let newcardInProgress = document.querySelectorAll('input.In-Progress-NewCard');
+newcardToDo.forEach(item => {
+    item.addEventListener('click', () => {
+        let novaDraggcard = document.createElement('div');
+        novaDraggcard.classList.add('draggcard');
+        novaDraggcard.setAttribute('draggable', true);
+
+        let novaContent = document.createElement('div');
+        novaContent.classList.add('content');
+
+        let novaTextArea = document.createElement('textarea');
+        novaTextArea.setAttribute('placeholder', 'Enter a Note');
+        novaTextArea.setAttribute('name', 'conteudo');
+        novaTextArea.setAttribute('id', 'conteudo');
+        novaTextArea.setAttribute('cols', '30');
+        novaTextArea.setAttribute('rows', '10');
+
+        // novaContent.appendChild(novaTextArea);
+        novaContent.appendChild(novaTextArea);
+        novaDraggcard.appendChild(novaContent);
+        conteinerInProgress.appendChild(novaDraggcard);
+    });    
+});

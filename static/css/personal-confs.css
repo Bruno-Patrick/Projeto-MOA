@@ -46,7 +46,7 @@ ul#accordionSidebar {
   padding: 16px;
   background: #A6A6DD;
   min-width: 282px;
-  min-height: 200px;
+  min-height: auto;
 }
 .draggcard {
   padding: 16px;
